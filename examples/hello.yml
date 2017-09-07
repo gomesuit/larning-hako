@@ -1,9 +1,9 @@
 scheduler:
   type: ecs
   region: ap-northeast-1
-  cluster: eagletmt
+  cluster: larning
   desired_count: 2
-  task_role_arn: arn:aws:iam::012345678901:role/HelloRole
+  task_role_arn: arn:aws:iam::012345678901:role/test-ecs2
   # dynamic_port_mapping is enabled by default with no ELB option
   # dynamic_port_mapping: false
   deployment_configuration:
@@ -23,7 +23,7 @@ app:
     MESSAGE: '#{username}-san'
 additional_containers:
   front:
-    image_tag: hako-nginx
+    image_tag: eagletmt/hako-nginx
     memory: 32
     cpu: 32
   redis:
